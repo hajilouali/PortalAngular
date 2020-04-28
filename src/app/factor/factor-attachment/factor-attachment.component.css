@@ -1,0 +1,29 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.g-overlay {
+    min-width: 320px;
+    direction: ltr !important; 
+  }
+  
+  gallery {
+    font-size: 16px;
+    direction: ltr !important; 
+  }
+  .g-box{
+    direction:ltr !important ;
+  }
+  img {
+    width: 150px;
+    direction: ltr !important; 
+  }
+  
+  .lightbox-example, .gallerize-example {
+      direction: ltr !important;
+    margin: 2em;
+  }
+  #lightbox-root {
+    direction: ltr !important; 
+  }
+  .ng-trigger-lightbox{
+    direction: ltr !important; 
+  }

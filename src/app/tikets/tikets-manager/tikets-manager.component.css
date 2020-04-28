@@ -1,0 +1,23 @@
+.iconeee{
+  display: inline-block;
+    transition: color 150ms linear, background 150ms linear, font-size 150ms linear, width 150ms;
+    padding: 10px 0px;
+    width: 70px;
+    font-size: 48px;
+    color: #212121;
+    border: 1px solid rgba(33, 33, 33, 0.1);
+    border-radius: 3px;
+}
+.btnNew{
+  float: right;
+  border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+.btnfav{
+  float: left;
+  border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+}
+.chat-for-widgets-1{
+  height: auto !important;
+}

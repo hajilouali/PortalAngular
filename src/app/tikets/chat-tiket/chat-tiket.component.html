@@ -1,0 +1,114 @@
+<div class="panel-wrapper collapse in">
+  <div class="panel-body pa-0">
+    <div class="chat-content">
+      <ul class="chatapp-chat-nicescroll-bar pt-20" style="height: 400px;overflow: auto;">
+        <li class="friend">
+          <div class="friend-msg-wrap">
+            <img class="user-img img-circle block pull-left"  src="assets/dist/img/user.png" alt="user"/>
+            <div class="msg pull-left">
+              <p>سلام ، روز بخیر</p>
+              <div class="msg-per-detail text-right">
+                <span class="msg-time txt-grey">2:30 PM</span>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </li>
+        <li class="self">
+          <div class="self-msg-wrap">
+            <div class="msg block pull-right"> سلام روز شما هم بخیر
+              <div class="msg-per-detail text-right">
+                <span class="msg-time txt-grey">2:31 pm</span>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </li>
+
+        <!-- <app-chat-message-ticket
+          *ngFor="let ticketContent of ticketContents"
+          [ticketContent]="ticketContent"
+        ></app-chat-message-ticket> -->
+        <!-- <li class="self">
+          <div class="self-msg-wrap">
+            <div class="msg block pull-right">  اگر سفارشی دارید در خدمتتون هستم
+              <div class="msg-per-detail text-right">
+                <span class="msg-time txt-grey">2:31 pm</span>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </li>
+        <li class="friend">
+          <div class="friend-msg-wrap">
+            <img class="user-img img-circle block pull-left"  src="assets/dist/img/user.png" alt="user"/>
+            <div class="msg pull-left">
+              <p>Not too bad.</p>
+              <div class="msg-per-detail  text-right">
+                <span class="msg-time txt-grey">2:35 pm</span>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </li>
+        <li class="self">
+          <div class="self-msg-wrap">
+            <div class="msg block pull-right"> ممنون از اطلاعات خوبتون
+              <div class="msg-per-detail text-right">
+                <span class="msg-time txt-grey">2:31 pm</span>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </li>
+        <li class="self">
+          <div class="self-msg-wrap">
+            <div class="msg block pull-right">  برای کسب اطلاعات بیشتر به سایت ما مراجعه بفرمایید
+              <div class="msg-per-detail text-right">
+                <span class="msg-time txt-grey">2:31 pm</span>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </li>
+        <li class="friend">
+          <div class="friend-msg-wrap">
+            <img class="user-img img-circle block pull-left"  src="assets/dist/img/user.png" alt="user"/>
+            <div class="msg pull-left">
+              <p>Not too bad.</p>
+              <div class="msg-per-detail  text-right">
+                <span class="msg-time txt-grey">2:35 pm</span>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+        </li> -->
+      </ul>
+    </div>
+    <div class="input-group">
+      <form class="chat-app-input col-md-12">
+        <mat-form-field class="col-md-12 ml-10">
+          <textarea
+            matInput
+            formControlName="ownerName"
+            autoResize="true"
+            placeholder='پاسخ به تیکت شماره : #123456789'
+          ></textarea>
+              <!-- <mat-placeholder style="color:brown" class="placeholder">Search</mat-placeholder> -->
+
+        </mat-form-field>
+        <label class="attach float-right">
+            <input type="file" name="file" />
+            <span class="ft-folder msgicon"></span>
+            <span class="msg-info">انتخاب فایل</span>
+
+            </label>
+        <button mat-raised-button color="green" class="float-left mb-10">
+          <i class="icon-check"></i>
+          <span>ارسال</span>
+        </button>
+
+      </form>
+    </div>
+  </div>
+</div>

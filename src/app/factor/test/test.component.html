@@ -1,0 +1,204 @@
+<div class="row heading-bg">
+  <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+    <h5 class="txt-dark">{{Title}}</h5>
+  </div>
+  <!-- Breadcrumb -->
+  
+  <!-- /Breadcrumb -->
+</div>
+<div class="row">
+  <div class="col-sm-12">
+     <div class="panel panel-default card-view">
+      
+      <div class="panel-wrapper collapse in">
+        <div class="panel-body">
+          <div id="viewerContent" style="direction: rtl;"></div>
+          <div class="row">
+            <div class="col-md-4">
+              <mat-form-field>
+                <mat-label>فیلتر فاکتورها</mat-label>
+                <input matInput (keyup)="applyFilter($event)" placeholder="جستجوی فاکتور ">
+              </mat-form-field>
+            </div>
+            <div class="col-md-8">
+              <div class="col-md-5" style="margin-top: 17px;">
+                <span style="margin-left: 5px;">از :</span>
+                <dp-date-picker dir="rtl" [(ngModel)]="GetFactorDto.StartDate" mode="day" placeholder="تاریخ" theme="dp-material"></dp-date-picker>
+              </div>
+                <div class="col-md-5" style="margin-top: 17px;">
+                  <span style="margin-left: 5px;">تا :</span>
+                      <dp-date-picker dir="rtl" [(ngModel)]="GetFactorDto.EndDate" mode="day" placeholder="تاریخ" theme="dp-material"></dp-date-picker>
+                </div>
+                <div class="col-md-2">
+                  <button class="btn btn-sm btn-success btn-outline fancy-button btn-0" (click)="Filter()">فیلتر</button>
+                </div>
+
+
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-12">
+     <div class="panel panel-default card-view">
+      
+      <div class="panel-wrapper collapse in">
+        <div class="panel-body">
+          <div id="viewerContent" ></div>
+          <p-table dataKey="id" [columns]="cols" [value]="dataSource"  [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
+                currentPageReportTemplate="فاکتور {first} تا {last} از {totalRecords} فاکتور">
+                  <ng-template pTemplate="caption">
+                    <div style="text-align: right">        
+                        <i class="pi pi-search" style="margin:4px 4px 0 0"></i>
+                        <input type="text" pInputText size="50" placeholder="جصتجو در لیست فاکتورها" (input)="filtertext($event.target.value)" style="width:auto">
+                    </div>
+                </ng-template>
+                  <ng-template pTemplate="header">
+                    <tr>
+                      <th style="width: 3em"></th>
+                        <th style="width: 5%" >شماره فاکتور</th>
+                        <th style="width: 20%">تاریخ</th>
+                        <th style="width: 20%">مبلغ</th>
+                        <th style="width: 20%">آخرین وضعیت</th>
+                       
+                        <th style="width: 35%"></th>
+                    </tr>
+                  </ng-template>
+                  <ng-template pTemplate="body" let-car let-expanded="expanded" let-columns="columns">
+                    <tr>
+                      <td>
+                        <a href="#" [pRowToggler]="car" pTooltip="مشاهده جزئیات" tooltipPosition="top">
+                            <i [ngClass]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
+                        </a>
+                    </td>
+                        <td>{{car.id}}</td>
+                        <td>{{car.dateTime}}</td>
+                       
+                        <td>{{car.totalPrice | number: '1.0-0'}} ريال</td>
+                        <td>{{car.factorType===0?'پیش فاکتور':car.factorType===1?'فاکتور':'در انتظار تایید'}}</td>
+                        <td>
+                          <div class="button-list">
+                            <button style="margin-top: 0em;" class="btn  btn-sm btn-primary btn-xs" routerLink='/FactorView' [queryParams]="{id:car.id}" >مشاهده فاکتور</button>
+                            <button style="margin-top: 0em;" class="btn  btn-sm btn-success btn-xs" routerLink='/FactorAttachment' [queryParams]="{id:car.id}" >پیوست ها</button>
+                            <button style="margin-top: 0em;" class="btn  btn btn-danger btn-xs" *ngIf="car.factorType===2" routerLink='/NewFactor' [queryParams]="{id:car.id}">ویرایش</button>
+                          </div>
+                          
+                        </td>
+                        
+                    </tr>
+                  </ng-template>
+                  <ng-template pTemplate="rowexpansion" let-rowData let-columns="columns">
+                    <tr>
+                        <td [attr.colspan]="columns.length + 1" dir="rtl">
+                          <p-tabView >
+                            <p-tabPanel header="آخرین وضعیت تولید">
+                              <b>آخرین تغییر :</b> {{rowData.manufacture[0].conditionManufactureTitle}} <br>
+                              <b>زمان ورود به تولید: </b>{{rowData.manufacture[0].inDateTime}}
+                            </p-tabPanel>
+                            <p-tabPanel header="تاریخچه تولید">
+                              <p-table [value]="rowData.manufacture[0].manufactureHistories">
+                                <ng-template pTemplate="header">
+                                  <tr>
+                                    
+                                      <th>تاریخ / زمان</th>
+                                      <th>کاربر</th>
+                                      <th>وضعیت</th>
+                                      <th>توضیح</th>
+                                     
+                                  </tr>
+                                </ng-template>
+                                <ng-template pTemplate="body" let-car>
+                                  <tr>
+                                    <td>{{car.dateTime}}</td>
+                                  <td>{{car.userFullname}}</td>
+                                  <td>{{car.conditionManufactureTitle}}</td>
+                                  <td>{{car.discription}}</td>
+                                  </tr>
+                                </ng-template>
+                              </p-table>
+                            </p-tabPanel>
+                            
+                        </p-tabView>
+                            <!-- <div class="ui-g ui-fluid" style="font-size:16px;padding:20px">
+                                
+                                <div class="ui-g-12 ui-md-9">
+                                    <div class="ui-g">
+                                        <div class="ui-g-12">
+                                            <b>شماره فاکتور:</b> {{rowData.id}}
+                                        </div>
+                                        <div class="ui-g-12">
+                                            <b>Year:</b> {{rowData.dateTime}}
+                                        </div>
+                                        <div class="ui-g-12">
+                                            <b>Brand:</b> {{rowData.totalPrice}}
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                            </div> -->
+                        </td>
+                    </tr>
+                </ng-template>
+                </p-table>
+                <!-- <p-table [columns]="cols" [value]="dataSource" dataKey="id">
+                  <ng-template pTemplate="header" let-columns>
+                      <tr>
+                          <th style="width: 3em"></th>
+                          <th *ngFor="let col of columns">
+                              {{col.header}}
+                          </th>
+                      </tr>
+                  </ng-template>
+                  <ng-template pTemplate="body" let-rowData let-expanded="expanded" let-columns="columns">
+                      <tr>
+                          <td>
+                              <a href="#" [pRowToggler]="rowData">
+                                  <i [ngClass]="expanded ? 'pi pi-chevron-down' : 'pi pi-chevron-right'"></i>
+                              </a>
+                          </td>
+                          <td *ngFor="let col of columns">
+                              {{rowData[col.field]}}
+                          </td>
+                      </tr>
+                  </ng-template>
+                  <ng-template pTemplate="rowexpansion" let-rowData let-columns="columns">
+                      <tr>
+                          <td [attr.colspan]="columns.length + 1">
+                              <div class="ui-g ui-fluid" style="font-size:16px;padding:20px">
+                                  <div class="ui-g-12 ui-md-3" style="text-align:center">
+                                      <img [attr.alt]="rowData.brand" src="assets/showcase/images/demo/car/{{rowData.brand}}.png">
+                                  </div>
+                                  <div class="ui-g-12 ui-md-9">
+                                      <div class="ui-g">
+                                          <div class="ui-g-12">
+                                              <b>Vin:</b> {{rowData.vin}}
+                                          </div>
+                                          <div class="ui-g-12">
+                                              <b>Year:</b> {{rowData.year}}
+                                          </div>
+                                          <div class="ui-g-12">
+                                              <b>Brand:</b> {{rowData.brand}}
+                                          </div>
+                                          <div class="ui-g-12">
+                                              <b>Color:</b> {{rowData.color}}
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </td>
+                      </tr>
+                  </ng-template>
+              </p-table> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

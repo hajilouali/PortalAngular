@@ -1,0 +1,53 @@
+#mat-input-0{
+
+}
+::ng-deep .mat-form-field-label{
+    color:green !important;
+
+}
+::placeholder{
+    color: green;
+}
+.pleft{
+      margin-right: 5px;
+
+}
+textarea#mat-input-0 {
+    border-bottom: solid 1px gainsboro;
+}
+.attach {
+  cursor: pointer;
+  margin-right: 10px;
+}
+.attach {
+cursor: pointer;
+}
+.attach input[type="file"] {
+display: none;
+}.msg-success {
+color: #00c853 !important;
+}
+.msg-info{
+color: #197dff;
+font-size: 17px;
+}
+.msgicon{
+background: #197dff;
+
+padding: 7px;
+
+color: #fff !important;
+
+border-radius: 50px;
+
+margin-left: 10px;
+}
+.msg-danger, .msg-success {
+margin-bottom: 12px;
+font-size: 11px;
+margin-top: 3px;
+margin-right: 4px;
+}
+.attach {
+cursor: pointer;
+}

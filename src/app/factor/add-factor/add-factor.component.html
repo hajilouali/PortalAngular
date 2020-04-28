@@ -1,0 +1,87 @@
+<!-- Row -->
+<div class="row">
+  <div class="col-sm-12">
+    <div class="panel panel-default card-view">
+      
+      <div class="panel-wrapper collapse in">
+        <div class="panel-body">
+          <div class="col-md-12">
+            <div class="form-group pull-left">
+              <button class="btn btn-primary" (click)="openDialog()">افزودن به فاکتور</button>
+            </div>
+            <div class="form-group pull-right" *ngIf="factorid ==null">
+              <button class="btn btn-success" (click)="SendFactor()" >ارسال فاکتور</button>
+            </div>
+            <div class="form-group pull-right" *ngIf="factorid!=null">
+              <button class="btn btn-success" (click)="UpdateFactor()" >اصلاح فاکتور</button>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <h3 class="first">ردیف های فاکتور</h3>
+            <p-table [value]="rowFactor" [(contextMenuSelection)]="selectedCar" >
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>نام محصول</th>
+                        <th>طول</th>
+                        <th>عرض</th>
+                        <th>تعداد</th>
+                        <th>مقدار</th>
+                        <th>قیمت واحد</th>
+                        <th>بهای تمام شده</th>
+                        <th></th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-car>
+                    <tr>
+                        <td>{{car.producName}}</td>
+                        <td *ngIf="car.length>0">{{car.length}}</td>
+                        <td *ngIf="car.length==0">-</td>
+                        <td *ngIf="car.width>0">{{car.width}}</td>
+                        <td *ngIf="car.width==0">-</td>
+                        <td>{{car.unit}}</td>
+                        <td>{{car.rowcalculate}}</td>
+                        <td>{{car.unitPrice | number: '1.0-0'}} ريال</td>
+                        <td>{{car.rowprice | number: '1.0-0'}} ريال</td>
+                        <th style="border: 1px solid #c8c8c8;">
+                          
+                            <button class="btn btn-danger btn-xs" (click)="deleteCar(car)">حذف</button>
+
+                          
+                        </th>
+                    </tr>
+                </ng-template>
+            </p-table>
+          </div>
+         <div *ngIf="rowFactor.length>0">
+          <div class="col-md-12">
+            <div class="form-group">
+              <label class="control-label mb-10 text-left">توضحیات</label>
+              <textarea class="form-control" rows="5" (change)="doTextareaValueChange($event)">{{dto.discription}}</textarea>
+          </div>
+          </div>
+          <div class="col-md-12" >
+            <div class="col-md-4">
+              <label class="col-md-4"> کل:</label>
+              <label class="col-md-8">{{FactorPrice | number: '1.0-0'}} ريال</label>
+            </div>
+            <div class="col-md-4">
+              <label class="col-md-4"> تخفیف:</label>
+              <label class="col-md-8">{{FactorDiscunt | number: '1.0-0'}} ريال</label>
+            </div>
+            <div class="col-md-4">
+              <label class="col-md-4"> بهای تمام شده :</label>
+              <label class="col-md-8">{{FactorTotalPrice | number: '1.0-0'}} ريال</label>
+            </div>
+          </div>
+          <div class="col-md-12" >
+            <label class="col-md-2">  به حرف :</label>
+              <label class="col-md-10">{{FactorTotalPrice | numberToPersian}} ريال</label>
+          </div>
+         </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

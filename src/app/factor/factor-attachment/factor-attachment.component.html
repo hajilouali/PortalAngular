@@ -1,0 +1,73 @@
+
+<div class="row heading-bg">
+    <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+      <h2 class="txt-dark" >{{Title}}</h2>
+    </div>
+    <!-- Breadcrumb -->
+    
+    <!-- /Breadcrumb -->
+  </div>
+  <!-- Row -->
+  <div class="row">
+      <div class="col-md-12">
+        <div class="panel">
+<div class="panel-body">
+<button class="btn btn-success" routerLink='/AddAttachment' [queryParams]="{id:Factoridid}">افزودن</button>
+</div>
+        </div>
+      </div>
+    <div class="col-md-12">
+        
+        <div class="panel panel-default card-view">
+            <div class="panel-heading">
+                <div class="pull-left">
+                    <h6 class="panel-title txt-dark">لیست پیوست های فاکتور شماره {{Factoridid}}</h6>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-wrapper collapse in"  style="direction: ltr !important; ">
+                <div class="panel-body">
+                  
+
+
+
+
+                    <div class="row" >
+                        <div class="col-lg-2 col-md-4 col-sm-4 col-xs-6" *ngFor="let item of items; index as i" id={{item.data.id}}>
+                         <div class="panel panel-default card-view pa-0">
+                             <div class="panel-wrapper collapse in">
+                                 <div class="panel-body pa-0">
+                                     <article class="col-item">
+                                         <div class="photo">
+                                             <div class="options">
+                                                 <a (click)="removeimage(item.data.id)" class="font-18 txt-grey pull-left sa-warning"><i class="zmdi zmdi-close"></i></a>
+                                             </div>
+                                             
+                                             <img  
+                                             [lightbox]="i"
+                                             [src]="item.data.thumb"
+                                             class="">
+                                            </div>
+                                         <div class="info" *ngIf="item.data.Title!=null">
+                                             <h6>{{item.data.Title}}</h6>
+                                             
+                                         </div>
+                                     </article>
+                                 </div>
+                             </div>	
+                         </div>	
+                     </div>	
+                     			
+                 </div>
+                   
+                    
+                    <span>{{respins.message}}</span>
+                 
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Row -->
+  

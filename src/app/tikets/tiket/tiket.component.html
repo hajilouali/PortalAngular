@@ -1,0 +1,24 @@
+<a  href="javascript:void(0)" (click)="onClick(ticket.id)">
+  <!-- <div class="chat-data  active-user" (click)="ClickA()"> -->
+  <div class="chat-data " (click)="ClickA()" [ngClass]="{'active-user': ticket===ticketId}">
+    <div class="user-data">
+      <span class="name block capitalize-font">  {{ticket.title}} </span>
+      <span class="time block truncate txt-grey">
+        <i class="info font-small-2">#</i> {{ticket.id}}
+
+      </span>
+      <div>
+      <button *ngIf="ticket.level === 1" class="btn btn-success btn-rounded btn-xs">عادی</button>
+      <button *ngIf="ticket.level === 2" class="btn btn-warning  btn-rounded btn-xs">مهم</button>
+      <button *ngIf="ticket.level === 3" class="btn btn-danger btn-rounded btn-xs">خیلی مهم</button>
+      <button *ngIf="ticket.closed" class="btn  btn-default btn-rounded btn-xs pleft">پاسخ داده شده</button>
+      <button *ngIf="!ticket.closed" class="btn  btn-info btn-rounded btn-xs pleft">باز</button>
+      </div>
+    </div>
+
+    <div class="status away"></div>
+    <div class="clearfix"></div>
+  </div>
+
+</a>
+

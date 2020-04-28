@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "Portal": {
@@ -20,13 +20,51 @@
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
+              "src/",
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/localization",
+              "src/scripts",
+              "src/reports"
+
+
             ],
             "styles": [
-              "src/styles.css"
+              "node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "node_modules/primeicons/primeicons.css",
+              "node_modules/primeng/resources/themes/nova-light/theme.css",
+              "node_modules/primeng/resources/primeng.min.css",
+              "src/styles.css",
+              "src/assets/vendors/bower_components/jasny-bootstrap/dist/css/jasny-bootstrap.min.css",
+              "src/assets/dist/css/style.css",
+              "src/assets/vendors/bower_components/datatables/media/css/jquery.dataTables.min.css",
+              "src/assets/dist/css/fancy-buttons.css",
+              "src/assets/vendors/bower_components/switchery/dist/switchery.min.css",
+              "node_modules/ngx-toastr/toastr.css",
+              "src/scripts/stimulsoft.viewer.office2013.whiteblue.css"
+
+
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/vendors/bower_components/jquery/dist/jquery.min.js",
+              "src/assets/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js",
+              "src/assets/dist/js/jquery.slimscroll.js",
+              "src/assets/vendors/bower_components/owl.carousel/dist/owl.carousel.min.js",
+              "src/assets/dist/js/dropdown-bootstrap-extended.js",
+              "src/assets/vendors/bower_components/switchery/dist/switchery.min.js",
+              "src/assets/dist/js/init.js",
+              "src/assets/vendors/bower_components/jquery.counterup/jquery.counterup.min.js",
+              "src/assets/vendors/bower_components/waypoints/lib/jquery.waypoints.min.js",
+              "src/assets/vendors/bower_components/jquery.steps/build/jquery.steps.min.js",
+              "src/assets/dist/js/form-wizard-data.js",
+              "src/assets/vendors/bower_components/jasny-bootstrap/dist/js/jasny-bootstrap.min.js",
+              "src/assets/vendors/bower_components/datatables/media/js/jquery.dataTables.min.js",
+              "src/assets/dist/js/dataTables-data.js",
+              "src/scripts/stimulsoft.reports.js",
+              "src/scripts/stimulsoft.viewer.js"
+
+
+            ]
           },
           "configurations": {
             "production": {
@@ -88,6 +126,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/purple-green.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -119,6 +158,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Portal"
+    }
+  },
+  "defaultProject": "Portal",
+  "cli": {
+    "analytics": false
+  }
 }
