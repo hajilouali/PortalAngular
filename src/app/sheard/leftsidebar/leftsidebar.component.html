@@ -1,0 +1,52 @@
+<div class="fixed-sidebar-left">
+  <ul class="nav navbar-nav side-nav nicescroll-bar">
+    <li class="navigation-header">
+      <span>داشبورد</span>
+      <i class="zmdi zmdi-more"></i>
+    </li>
+    <li>
+      <a href="javascript:void(0);" data-toggle="collapse" data-target="#dashboard_dr">
+        <div class="pull-left">
+          <i class="zmdi zmdi-shopping-basket mr-20"></i>
+          <span class="right-nav-text">عملیات فاکتور</span>
+        </div>
+        <div class="pull-right">
+          <i class="zmdi zmdi-caret-down"></i>
+        </div><div class="clearfix"></div></a>
+      <ul id="dashboard_dr" class="collapse collapse-level-1">
+        <li>
+          <a  routerLink="/NewFactor">ایجاد فاکتور</a>
+        </li>
+        <li>
+          <a routerLink="/Invoicelist">لیست فاکتورها</a>
+        </li>
+
+      </ul>
+    </li>
+    <li>
+      <a href="javascript:void(0);" data-toggle="collapse" data-target="#ecom_dr"  routerLinkActive="active">
+        <div class="pull-left">
+          <i class="zmdi zmdi-chart mr-20"></i>
+          <span class="right-nav-text">مالی</span>
+        </div>
+        <div class="pull-right">
+          <i class="zmdi zmdi-caret-down"></i>
+        </div>
+        <div class="clearfix"></div>
+      </a>
+      <ul id="ecom_dr" class="collapse collapse-level-1">
+        <li>
+          <a [routerLink]="['/Moein']">گزارش معین</a>
+        </li>
+        <li>
+          <a [routerLink]="[ '/pay']">شارژ حساب</a>
+        </li>
+
+      </ul>
+    </li>
+    <li>
+      <a [routerLink]="['/Tikets']" routerLinkActive="active" ><div class="pull-left"><i class="zmdi zmdi-whatsapp mr-20"></i><span class="right-nav-text">پشتیبانی</span></div><div class="clearfix"></div></a>
+    </li>
+
+  </ul>
+</div>

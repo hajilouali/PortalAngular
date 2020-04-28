@@ -1,0 +1,181 @@
+<div class="recent-chat-wrap" style="height: 540px;" *ngIf="ticket">
+  <div class="panel-heading ma-0 pt-15">
+    <div class="goto-back">
+      <a  id="goto_back_widget_1" href="javascript:void(0)" class="inline-block txt-grey" (click)="GoBack()">
+        <i class="zmdi zmdi-account-add"></i>
+      </a>
+      <span class="inline-block txt-dark">
+        <p >
+          {{ticket.title}}
+        </p>
+
+
+
+      </span>
+      <a class="inline-block text-right txt-grey">
+        {{ticket.id}}
+              <i class="info font-small-2">#</i>
+
+        </a>
+
+      <div class="clearfix"></div>
+      <div class="form-group">
+        <div class="col-md-12">
+
+            <div class="col-md-4">
+              <strong class=""> بروز رسانی :</strong>
+            <small class="">{{ticket.dataModified.toString()| persianTimeAgo }}</small>
+            </div>
+            <div class="col-md-4">
+              <strong class=""> ایجاد شده :</strong>
+            <small class="">{{ticket.dataCreate.toString() | persianTimeAgo }}</small>
+            </div>
+            <div class="col-md-4">
+
+
+
+              <button *ngIf="ticket.level === 1" class="btn btn-success btn-rounded btn-xs">عادی</button>
+              <button *ngIf="ticket.level === 2" class="btn btn-warning  btn-rounded btn-xs">مهم</button>
+              <button *ngIf="ticket.level === 3" class="btn btn-danger btn-rounded btn-xs">خیلی مهم</button>
+              <button *ngIf="ticket.closed" class="btn  btn-default btn-rounded btn-xs pleft">پاسخ داده شده</button>
+              <button *ngIf="!ticket.closed" class="btn  btn-info btn-rounded btn-xs pleft">باز</button>
+            </div>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+  <div class="panel-wrapper collapse in">
+    <div class="panel-body pa-0">
+      <div class="chat-content">
+
+        <ul class="chatapp-chat-nicescroll-bar pt-20" style="height: 360px;overflow: auto;" >
+          <li class="" *ngFor="let item of ticket.tiketContents" [ngClass]="item.isAdminSide ?'friend':'self' ">
+            <div class="" [ngClass]="item.isAdminSide ?'friend-msg-wrap':'self-msg-wrap' ">
+              <img style="padding-right: 0 !important;" *ngIf="item.isAdminSide" class="user-img img-circle block pull-left"  src="assets/dist/img/logo.png" alt="user"/>
+              <div class="" [ngClass]="item.isAdminSide ?'msg pull-left':'msg block pull-right' ">
+                <span *ngIf="item.text!=null">{{item.text}}</span>
+                <a *ngIf="item.fileURL" href={{baseurl+item.tiketId.toString()+splash+item.fileURL}}><p>دانلود فایل</p><p>{{item.fileURL}}</p></a>
+                <div class="msg-per-detail text-right">
+                  <span class="msg-time txt-grey">{{item.dataCreate.toString() | persianTimeAgo}}</span>
+                </div>
+              </div>
+              <div class="clearfix"></div>
+            </div>
+          </li>
+         </ul>
+      </div>
+      <section class="chat-app-form bg-blue-grey bg-lighten-5">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title-wrap bar-success my-2">
+              <h4 class="card-title dis-inline">پاسخ به تیکت :</h4>
+              <span class=" dis-inline tickettitle">{{ticket.title}}</span>
+            </div>
+            <!-- <div *ngIf="ticketClosed">
+                <p>
+                    برای ارسال پیغام ابتدا تیکت را از حالت <span class="badge badge-danger">بسته بودن</span> خارج کنید
+                  </p>
+            </div> -->
+            <div >
+               <p>
+              * پس از ارسال تیکت حداکثر تا ۱۲ ساعت آینده پاسخ برای شما ارسال خواهد شد.
+            </p>
+            <p>
+              * برخی از تیکت ها ممکن است، نیاز به زمان بیشتری برای بررسی داشته باشند.
+            </p>
+            <p>
+              * پس از ارسال تیکت، نیازی به تماس تلفنی نیست. تیکت ارسالی شما قطعا توسط
+              همکاران ما بررسی و پاسخ داده خواهد شد.
+            </p>
+            </div>
+
+          </div>
+          <div
+
+          class="card-body" >
+            <div class="card-block text-center row">
+              <form [formGroup]="ticketContentForm" class="chat-app-input col-md-12">
+                <mat-form-field class="col-md-12 ml-10">
+                  <textarea
+                  formControlName="text"
+                    matInput
+                    placeholder="متن پاسخ تیکت *"
+                  ></textarea>
+                  <mat-error
+                  *ngIf="
+                    ticketContentForm.get('text').hasError('required') &&
+                    ticketContentForm.get('text').touched
+                  "
+                  >این فیلد نمیتواند خالی باشد</mat-error
+                >
+
+                <mat-error
+                  *ngIf="
+                    ticketContentForm.get('text').hasError('maxlength') &&
+                    ticketContentForm.get('text').touched
+                  "
+                >
+                  این فیلد نمیتواند بیشتر از 1000 کاراکتر باشد</mat-error
+                >
+                </mat-form-field>
+                <label class="attach float-right">
+                    <input (change)="onFileSelect($event)"
+                     type="file" name="file" />
+                    <span
+                    [ngClass]="selected ? 'msgicon-green' : 'msgicon-blue'"
+                     class="ft-folder msgicon"></span>
+                    <span *ngIf="!selected" class="msg-info">انتخاب فایل</span>
+                    <span *ngIf="selected" class="msg-success">فایل اضافه شد
+                      <span class="filename">({{fileName}})</span>
+                      </span>
+                  </label>
+                <button
+                (click)="onSubmitCreate()"
+                [disabled]="ticketContentForm.invalid"
+                mat-raised-button color="green"
+                id="btnAddTicketContent"
+                class="float-left mb-10">
+                  <i class="icon-check"></i>
+                  <span>ارسال</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+</div>
+<!-- <div class="list-group position-relative">
+  <div class="user-list-padding">
+    <a class="list-group-item bg-blue-grey gb-lighten-5 border-right-primary border-right-2">
+      <span class="media">
+        <div class="media-body">
+          <h6 class="list-group-item-heading my-2">
+            سارا وزیری
+            <span class="float-left info">بعد از ظهر</span>
+          </h6>
+          <p class="list-group-item-text text-muted my-2">
+            <i class="info font-small-2">#</i>26556656565
+            <span class="float-left info">
+              <a class="btn mr-1 btn-round shadow-z-2 btn-warning lbl-show">
+                مهم
+              </a>
+              <a class="btn mr-1 btn-round shadow-z-2 btn-warning lbl-show">
+                بسته شده
+              </a>
+            </span>
+          </p>
+        </div>
+      </span>
+    </a>
+  </div>
+</div> -->

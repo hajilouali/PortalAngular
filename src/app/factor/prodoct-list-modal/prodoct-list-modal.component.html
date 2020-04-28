@@ -1,0 +1,164 @@
+<!-- Row -->
+<div class="row">
+  <div class="col-sm-12">
+    <div class="panel panel-default card-view">
+
+      <div class="panel-wrapper collapse in">
+        <div class="panel-body">
+          <div id="SelectProduct" *ngIf="ShowSelectProduct">
+            <h3>انتخاب محصول</h3>
+            <p-table dir="rtl" [columns]="cols" [value]="cars" [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
+                currentPageReportTemplate="محصول {first} تا {last} از {totalRecords} محصول" [(selection)]="selectedCar4" [resizableColumns]="true">
+                <ng-template pTemplate="caption">
+                    <div style="text-align: right">
+                        <i class="pi pi-search" style="margin:4px 4px 0 0"></i>
+                        <input type="text" pInputText size="50" placeholder="جصتجو در لیست محصولات" (input)="filter($event.target.value)" style="width:auto">
+                    </div>
+                </ng-template>
+                <ng-template pTemplate="colgroup" let-columns>
+                    <colgroup>
+                        <col *ngFor="let col of columns" [style.width]="col.width">
+                    </colgroup>
+                </ng-template>
+                <ng-template pTemplate="header" let-columns>
+                    <tr>
+                        <th style="width: 3em" ></th>
+                        <th *ngFor="let col of columns" pResizableColumn>
+                            {{col.header}}
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" let-rowData let-columns="columns">
+                    <tr [pSelectableRow]="rowData">
+                        <td>
+                            <p-tableRadioButton [value]="rowData"></p-tableRadioButton>
+                        </td>
+                        <td *ngFor="let col of columns">
+                            {{rowData[col.field]}}
+                        </td>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="summary">
+                    <div style="text-align: right">
+                        محصول انتخاب شده: {{selectedCar4 ? selectedCar4.id + ' - ' + selectedCar4.productName + ' - ' + selectedCar4.productCode : 'none'}}
+                    </div>
+                </ng-template>
+            </p-table>
+            <div class="button-list mt-25">
+              <button class="btn btn-success" (click)="ClickNextCalculat()">بعدی</button>
+            </div>
+
+          </div>
+          <div id="CalculatProduct" *ngIf="ShowCalculatProduct">
+            <div class="button-list mt-25">
+              <div class="col-sm-12">
+                <div class="row">
+                  <div class="col-sm-4" *ngIf="Toll">
+                    <div class="form-group">
+                      <label class="control-label mb-10">طول</label>
+                      <input type="number" step="0.001" min="0" class="form-control" placeholder="طول ..." (change)="ChangeValue()"  [(ngModel)]="postData.length">
+
+                    </div>
+                   </div>
+                  <div class="col-sm-4" *ngIf="arz">
+                    <div class="form-group">
+                      <label class="control-label mb-10">عرض</label>
+                      <input type="number" step="0.001" min="0" class="form-control" placeholder="عرض ..." (change)="ChangeValue()" [(ngModel)]="postData.width">
+
+                    </div>
+                   </div>
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label class="control-label mb-10">تعداد</label>
+                      <input type="number" step="1" min="0" class="form-control" placeholder="تعداد ..." (change)="ChangeValue()" [(ngModel)]="postData.unit" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+
+                    </div>
+                      </div>
+
+                </div>
+                <div class="row">
+                  <div class="col-sm-4">
+                    <div class="form-group" style="color: black;">
+                      <label class="control-label mb-10">قیمت واحد</label>
+                      <label type="text" class="form-control" disabled >{{postData.unitPrice  | number: '1.0-0'}} ريال</label>
+                    </div>
+                     </div>
+                  <div class="col-sm-4">
+                    <div class="form-group" style="color: black;">
+                      <label class="control-label mb-10">متراژ کل</label>
+                      <input type="text" class="form-control" disabled [(ngModel)]="postData.rowcalculate">
+
+                    </div>
+                    </div>
+                  <div class="col-sm-4">
+                    <div class="form-group" style="color: black;">
+                      <label class="control-label mb-10">تمام شده</label>
+                      <label type="text" class="form-control" disabled [(ngModel)]="postData.rowprice">{{postData.rowprice | number:'1.0-0'}} ريال</label>
+                      <span>معادل : {{postData.rowprice | numberToPersian}} ريال</span>
+
+                    </div>
+                     </div>
+
+                </div>
+                <div class="row" >
+                  <div class="form-group">
+                    <label class="control-label mb-10 text-left">توضحیات</label>
+                    <textarea class="form-control" rows="5" (change)="doTextareaValueChange($event)"></textarea>
+                </div>
+                </div>
+                <div class="row" *ngIf="arz">
+                  <div class="col-md-12">
+                    <img src="data:image/png;base64,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" alt="">
+                  </div>
+                </div>
+              </div>
+              <button class="btn btn-danger" (click)="ClickPrive()">قبلی</button>
+              <button class="btn btn-success" (click)="Finish()" >اتمام</button>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Row -->
+
+
+
+<!--
+<div mat-dialog-content>
+  <table>
+    <thead>
+      <tr>
+        <td>نام محصول</td>
+        <td>شناسه محصول</td>
+        <td>قیمت واحد </td>
+        <td>واحد </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of data.name">
+        <td>{{item.productName}}</td>
+        <td>{{item.productCode}}</td>
+        <td>{{item.unitPrice}}</td>
+        <td [ngSwitch]="item.unitType">
+        <p *ngSwitchCase="0">
+        مترمربع
+        </p>
+        <p *ngSwitchCase="1">
+        متر
+        </p>
+        <p *ngSwitchCase="2">
+        عدد
+        </p>
+      </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.animal" cdkFocusInitial>Ok</button>
+</div> -->

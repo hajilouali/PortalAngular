@@ -1,0 +1,171 @@
+<div class="row">
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+    <div class="panel panel-default card-view pa-0">
+      <div class="panel-wrapper collapse in">
+        <div class="panel-body pa-0">
+          <div class="sm-data-box bg-red">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
+                  <span class="txt-light block counter"><span
+                      class="">{{userinfo.clientAccountingStatus.price | abs | irc }} </span></span>
+                  <span class="weight-500 uppercase-font txt-light block font-13">وضعیت مالی </span>
+                </div>
+                <div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right txt-light" style="font-size: 25px;">
+                  {{userinfo.clientAccountingStatus.status}}
+                  <!-- <i class="zmdi zmdi-male-female txt-light data-right-rep-icon"></i> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+    <div class="panel panel-default card-view pa-0">
+      <div class="panel-wrapper collapse in">
+        <div class="panel-body pa-0">
+          <div class="sm-data-box bg-yellow">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
+                  <span class="txt-light block counter"><span class="">{{userinfo.factorPernding.length}}</span></span>
+                  <span class="weight-500 uppercase-font txt-light block">فاکتور در انظار تایید</span>
+                </div>
+                <div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
+                  <i class="zmdi zmdi-redo txt-light data-right-rep-icon"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+    <div class="panel panel-default card-view pa-0">
+      <div class="panel-wrapper collapse in">
+        <div class="panel-body pa-0">
+          <div class="sm-data-box bg-green">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-xs-6 text-center pl-0 pr-0 data-wrap-left">
+                  <span class="txt-light block counter"><span class="">{{userinfo.manufactureDto.length}}</span></span>
+                  <span class="weight-500 uppercase-font txt-light block">سفارش در حال تولید</span>
+                </div>
+                <div class="col-xs-6 text-center  pl-0 pr-0 data-wrap-right">
+                  <i class="zmdi zmdi-file txt-light data-right-rep-icon"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="row">
+
+  <div class="col-lg-9 col-md-9 col-sm-6 col-xs-12">
+    <div class="panel panel-default card-view panel-refresh">
+      <div class="refresh-container">
+        <div class="la-anim-1"></div>
+      </div>
+      <div class="panel-heading">
+        <div class="pull-left">
+          <h6 class="panel-title txt-dark">گزارش سفارشات شما در تولید</h6>
+        </div>
+
+        <div class="clearfix"></div>
+      </div>
+
+      <!-- جدول  -->
+      <p-table dataKey="id" [value]="userinfo.manufactureDto"  [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
+                currentPageReportTemplate="سفارش {first} تا {last} از {totalRecords} سفارش">
+
+              <ng-template pTemplate="header">
+                <tr>
+                    <th style="width: 10%" >شماره تولید</th>
+                    <th style="width: 10%" >شماره فاکتور</th>
+                    <th style="width: 35%"> تاریخ ورود به تولید</th>
+                    <th style="width: 35%">آخرین وضعیت تولید</th>
+                </tr>
+              </ng-template>
+              <ng-template pTemplate="body" let-car let-expanded="expanded" let-columns="columns">
+                <tr>
+
+                    <td>{{car.id}}</td>
+                    <td>{{car.factor_ID}}</td>
+
+                    <td>{{car.inDateTime }} </td>
+                    <td>{{car.conditionManufactureTitle}}</td>
+
+
+                </tr>
+              </ng-template>
+                </p-table>
+    </div>
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <div class="panel panel-default card-view panel-refresh">
+      <div class="refresh-container" style="display: none;">
+        <div class="la-anim-1"></div>
+      </div>
+      <div class="panel-heading">
+        <div class="pull-left">
+          <h6 class="panel-title txt-dark">وضعیت فروش</h6>
+        </div>
+
+        <div class="pull-right">
+          <H5 class="panel-title txt-back ">
+            {{datenow | jdate }}
+          </H5>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+      <div class="panel-wrapper collapse in">
+        <div class="panel-body">
+
+          <hr class="light-grey-hr row mt-10 mb-15">
+          <div class="label-chatrs">
+            <div class="">
+              <span class="clabels clabels-lg inline-block bg-blue mr-10 pull-left"></span>
+              <span class="clabels-text font-12 inline-block txt-dark capitalize-font pull-left"><span
+                  class=" font-15 weight-500 mb-5">تعداد کل فاکتور ها:</span><span class=" txt-grey">  {{userinfo.partnerFactorCunt.all}}</span></span>
+              <div id="sparkline_1" class="pull-right" style="width: 100px; overflow: hidden; margin: 0px auto;"><canvas
+                  width="100" height="35"
+                  style="display: inline-block; width: 100px; height: 35px; vertical-align: top;"></canvas></div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+          <hr class="light-grey-hr row mt-10 mb-15">
+          <div class="label-chatrs">
+            <div class="">
+              <span class="clabels clabels-lg inline-block bg-green mr-10 pull-left"></span>
+              <span class="clabels-text font-12 inline-block txt-dark capitalize-font pull-left"><span
+                  class=" font-15 weight-500 mb-5">تعداد فاکتور های سال:</span><span class=" txt-grey">  {{userinfo.partnerFactorCunt.inyear}}</span></span>
+              <div id="sparkline_2" class="pull-right" style="width: 100px; overflow: hidden; margin: 0px auto;"><canvas
+                  width="100" height="35"
+                  style="display: inline-block; width: 100px; height: 35px; vertical-align: top;"></canvas></div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+          <hr class="light-grey-hr row mt-10 mb-15">
+          <div class="label-chatrs">
+            <div class="">
+              <span class="clabels clabels-lg inline-block bg-yellow mr-10 pull-left"></span>
+              <span class="clabels-text font-12 inline-block txt-dark capitalize-font pull-left"><span
+                  class=" font-15 weight-500 mb-5">تعداد فاکتور های ماه :</span><span class=" txt-grey">  {{userinfo.partnerFactorCunt.inMonth}}</span></span>
+              <div id="sparkline_3" class="pull-right" style="width: 100px; overflow: hidden; margin: 0px auto;"><canvas
+                  width="100" height="35"
+                  style="display: inline-block; width: 100px; height: 35px; vertical-align: top;"></canvas></div>
+              <div class="clearfix"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<div>
+  <div class="form-group">
+    <button class="btn btn-success btn-rounded btn-sm btn-icon left-icon" (click)="onCreate()" style="margin-top: 15px;"><i class="fa fa-plus-circle"></i><span>افزودن تیکت جدید</span></button>
+
+  </div>
+  <div class="chatapp-nicescroll-bar">
+    <ul class="chat-list-wrap">
+      <li class="chat-list">
+        <div class="chat-body">
+          <diV style="height: 540px;overflow: auto;">
+
+          <!-- <ng-scrollbar class="search-results" class="my-scrollbar" > -->
+            <app-tiket *ngFor="let ticket of tickets | async" [ticket]="ticket" [ticketId]="selectedTicketId" (selectedTicketId)="changeSelectedTicketId($event)"></app-tiket>
+            <button
+          *ngIf="(tickets | async)?.length !== 0"
+            mat-raised-button
+            color="blue"
+            class="mb-10 btnload"
+            (click)="onScroll()"
+          >
+            بارگزاری تیکت های بیشتر
+          </button>
+          <!-- </ng-scrollbar> -->
+          <div class="alert alert-warning" *ngIf="finished">
+            <strong>توجه! </strong> تیکیتی برای نمایش بیشتر وجود ندارد
+          </div>
+        </diV>
+
+
+
+        </div>
+      </li>
+    </ul>
+
+
+  </div>
+
+</div>

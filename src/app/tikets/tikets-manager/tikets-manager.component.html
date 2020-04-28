@@ -1,0 +1,29 @@
+
+
+<!-- Row -->
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default border-panel card-view pa-0">
+      <div class="panel-wrapper collapse in">
+        <div class="panel-body pa-0">
+          <div class="chat-cmplt-wrap chat-for-widgets-1">
+            <div class="chat-box-wrap">
+
+              <app-list-tikets [firstTickets]="tickets" (childData)="selectedtikmetod($event)"></app-list-tikets>
+              <!-- <app-list-tikets ></app-list-tikets> -->
+
+            </div>
+            <div class="recent-chat-box-wrap">
+              <app-ditail-tiket [ticket]="selectedtik"></app-ditail-tiket>
+              <!-- <router-outlet></router-outlet> -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Row -->
+
+

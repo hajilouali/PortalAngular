@@ -1,0 +1,67 @@
+
+
+<div class="row">
+  <div class="col-sm-12">
+     <div class="panel panel-default card-view">
+      
+      <div class="panel-wrapper collapse in">
+        <div class="panel-body">
+          <div id="viewerContent" style="direction: ltr;"></div>
+          
+           
+          <div class="col-sm-12" style="direction: rtl;">
+            <div class="panel panel-default card-view" style="direction: rtl;">
+             
+             <div class="panel-wrapper collapse in" style="direction: rtl;">
+               <div class="panel-body" style="direction: rtl;">
+                 <div class="ltrdir" id="viewerContent" style="direction: rtl;"></div>
+                 
+               </div>
+             </div>
+           </div>
+         </div>
+
+
+
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  
+</div>
+
+
+<div class="row">
+  <div class="col-sm-12">
+     <div class="panel panel-default card-view">
+      
+      <div class="panel-wrapper collapse in">
+        <div class="panel-body">
+          <div id="viewerContent" style="direction: ltr;"></div>
+          
+           
+            <div class="col-md-8">
+              <div class="col-md-5" style="margin-top: 17px;">
+                <span style="margin-left: 5px;">از :</span>
+                <dp-date-picker dir="ltr"  [(ngModel)]="startDate" mode="day" placeholder="تاریخ" theme="dp-material"></dp-date-picker>
+              </div>
+                <div class="col-md-5" style="margin-top: 17px;">
+                  <span style="margin-left: 5px;">تا :</span>
+                      <dp-date-picker dir="ltr"  [(ngModel)]="endDate" mode="day" placeholder="تاریخ" theme="dp-material"></dp-date-picker>
+                </div>
+                <div class="col-md-2">
+                  <button class="btn btn-sm btn-success btn-outline fancy-button btn-0" (click)="Filter()">فیلتر</button>
+                </div>
+
+
+
+
+
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

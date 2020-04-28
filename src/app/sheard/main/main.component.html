@@ -1,0 +1,55 @@
+
+<!--Preloader-->
+<!-- <div >
+  <div class="la-anim-1"></div>
+</div> -->
+<!--/Preloader-->
+  <div class="{{ngclasss}}">
+
+      <!-- Top Menu Items -->
+      <app-topmenu (childData)="ngclasss=$event"
+      [parentdata]="classdynamic"></app-topmenu>
+
+  <!-- /Top Menu Items -->
+
+  <!-- Left Sidebar Menu -->
+  <app-leftsidebar></app-leftsidebar>
+
+  <!-- /Left Sidebar Menu -->
+
+  <!-- Right Sidebar Menu -->
+  <!-- <app-rightsidebar></app-rightsidebar> -->
+
+  <!-- /Right Sidebar Menu -->
+
+  <!-- Main Content -->
+  <div class="page-wrapper">
+          <div class="container-fluid">
+
+
+
+<!--ddddddd-->
+<router-outlet></router-outlet>
+
+<ngx-ui-loader></ngx-ui-loader>
+
+
+
+      <!-- /Title -->
+
+      <!-- Footer -->
+      <footer class="footer container-fluid pl-30 pr-30">
+        <div class="row">
+          <div class="col-sm-12">
+            <p>1398 &copy; گروه تولیدی دُرمت</p>
+          </div>
+        </div>
+      </footer>
+      <!-- /Footer -->
+    </div>
+  </div>
+      <!-- /Main Content -->
+
+  </div>
+  <!-- /#wrapper -->
+
