@@ -44,7 +44,6 @@
   </Dictionary>
   <EngineVersion>EngineV2</EngineVersion>
   <GlobalizationStrings isList="true" count="0" />
-  <Key>0af3f983cd5943dfa16872b1e2559f19</Key>
   <MetaTags isList="true" count="0" />
   <Pages isList="true" count="1">
     <Page1 Ref="3" type="Page" isKey="true">
@@ -59,7 +58,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>12.2,0.2,4.2,0.8</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Tahoma,14</Font>
+              <Font>IRANSans,14</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text1</Name>
@@ -73,7 +72,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>23.4,0.8,4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Tahoma,12</Font>
+              <Font>IRANSans,10</Font>
               <Margins>0,0,0,0</Margins>
               <Name>Text2</Name>
               <Page isRef="3" />
@@ -88,7 +87,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>2,0.8,3.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Tahoma,12</Font>
+              <Font>IRANSans,10</Font>
               <Margins>0,0,0,0</Margins>
               <Name>Text3</Name>
               <Page isRef="3" />
@@ -104,7 +103,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>19.6,1.8,8,1</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,12</Font>
+              <Font>IRANSans,12</Font>
               <Margins>0,0,0,0</Margins>
               <Name>Text4</Name>
               <Page isRef="3" />
@@ -120,7 +119,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>0.2,1.8,5.4,1</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,12</Font>
+              <Font>IRANSans,12</Font>
               <Margins>0,0,0,0</Margins>
               <Name>Text5</Name>
               <Page isRef="3" />
@@ -136,7 +135,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>12.4,1.8,7.2,1</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,12</Font>
+              <Font>IRANSans,12</Font>
               <Margins>0,0,0,0</Margins>
               <Name>Text6</Name>
               <Page isRef="3" />
@@ -152,7 +151,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>5.6,1.8,6.8,1</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,12</Font>
+              <Font>IRANSans,12</Font>
               <Margins>0,0,0,0</Margins>
               <Name>Text7</Name>
               <Page isRef="3" />
@@ -168,7 +167,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>0.2,2.8,27.4,1.2</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,12</Font>
+              <Font>IRANSans,12</Font>
               <Margins>0,0,0,0</Margins>
               <Name>Text8</Name>
               <Page isRef="3" />
@@ -184,7 +183,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>26.6,4.2,1,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,12,Bold</Font>
+              <Font>IRANSans,8.25,Bold</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text9</Name>
@@ -200,7 +199,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>21,4.2,5.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,12,Bold</Font>
+              <Font>IRANSans,8.25,Bold</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text10</Name>
@@ -216,7 +215,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>19.6,4.2,1.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,12,Bold</Font>
+              <Font>IRANSans,8.25,Bold</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text11</Name>
@@ -232,7 +231,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>18.2,4.2,1.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,12,Bold</Font>
+              <Font>IRANSans,8.25,Bold</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text12</Name>
@@ -248,7 +247,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>17,4.2,1.2,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,12,Bold</Font>
+              <Font>IRANSans,8.25,Bold</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text13</Name>
@@ -264,7 +263,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>15.2,4.2,1.8,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,12,Bold</Font>
+              <Font>IRANSans,8.25,Bold</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text14</Name>
@@ -280,7 +279,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>12.2,4.2,3,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,12,Bold</Font>
+              <Font>IRANSans,8.25,Bold</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text15</Name>
@@ -296,7 +295,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>8.8,4.2,3.4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,12,Bold</Font>
+              <Font>IRANSans,8.25,Bold</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text16</Name>
@@ -312,7 +311,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>0.2,4.2,8.6,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,12,Bold</Font>
+              <Font>IRANSans,8.25,Bold</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text17</Name>
@@ -327,7 +326,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>12.4,1.2,4,0.6</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10</Font>
+              <Font>IRANSans,10</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text25</Name>
@@ -341,7 +340,6 @@
             </Text25>
             <StartPointPrimitive1 Ref="23" type="Stimulsoft.Report.Components.StiStartPointPrimitive" isKey="true">
               <ClientRectangle>0.2,0.2,0,0</ClientRectangle>
-              <Conditions isList="true" count="0" />
               <Name>StartPointPrimitive1</Name>
               <Page isRef="3" />
               <Parent isRef="4" />
@@ -349,7 +347,6 @@
             </StartPointPrimitive1>
             <EndPointPrimitive1 Ref="24" type="Stimulsoft.Report.Components.StiEndPointPrimitive" isKey="true">
               <ClientRectangle>27.6,1.8,0,0</ClientRectangle>
-              <Conditions isList="true" count="0" />
               <Name>EndPointPrimitive1</Name>
               <Page isRef="3" />
               <Parent isRef="4" />
@@ -374,7 +371,7 @@
               <CanGrow>True</CanGrow>
               <ClientRectangle>0.2,0,8.6,1</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10</Font>
+              <Font>IRANSans,8.25</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>DataDT_RowDiscription</Name>
@@ -391,7 +388,7 @@
               <CanGrow>True</CanGrow>
               <ClientRectangle>8.8,0,3.4,1</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10</Font>
+              <Font>IRANSans,8.25</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>DataDT_RowPrice</Name>
@@ -414,7 +411,7 @@
               <CanGrow>True</CanGrow>
               <ClientRectangle>12.2,0,3,1</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10</Font>
+              <Font>IRANSans,8.25</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>DataDT_RowUnitPrice</Name>
@@ -437,7 +434,7 @@
               <CanGrow>True</CanGrow>
               <ClientRectangle>15.2,0,1.8,1</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10</Font>
+              <Font>IRANSans,8.25</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>DataDT_RowMetraj</Name>
@@ -454,7 +451,7 @@
               <CanGrow>True</CanGrow>
               <ClientRectangle>17,0,1.4,1</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10</Font>
+              <Font>IRANSans,8.25</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>DataDT_RowUnit</Name>
@@ -471,7 +468,7 @@
               <CanGrow>True</CanGrow>
               <ClientRectangle>18.2,0,1.4,1</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10</Font>
+              <Font>IRANSans,8.25</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>DataDT_RowTol</Name>
@@ -488,7 +485,7 @@
               <CanGrow>True</CanGrow>
               <ClientRectangle>19.6,0,1.4,1</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10</Font>
+              <Font>IRANSans,8.25</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>DataDT_RowArz</Name>
@@ -505,7 +502,7 @@
               <CanGrow>True</CanGrow>
               <ClientRectangle>21,0,5.6,1</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10</Font>
+              <Font>IRANSans,8.25,Bold</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>DataDT_RowProductName</Name>
@@ -522,7 +519,7 @@
               <CanGrow>True</CanGrow>
               <ClientRectangle>26.6,0,1,1</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10</Font>
+              <Font>IRANSans,8.25</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>DataDT_RowNumeber</Name>
@@ -551,7 +548,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>0.2,2.4,5.4,0.8</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10</Font>
+              <Font>IRANSans,8.25,Bold</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text18</Name>
@@ -573,7 +570,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>0.2,1.6,5.4,0.8</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10</Font>
+              <Font>IRANSans,8.25,Bold</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text19</Name>
@@ -595,7 +592,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>0.2,0,5.4,0.8</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10</Font>
+              <Font>IRANSans,8.25,Bold</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text20</Name>
@@ -617,7 +614,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>8.8,0.8,18.8,2.4</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,12,Bold</Font>
+              <Font>IRANSans,8.25</Font>
               <Margins>0,0,0,0</Margins>
               <Name>Text21</Name>
               <Page isRef="3" />
@@ -632,7 +629,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>5.6,0,3.2,0.8</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10</Font>
+              <Font>IRANSans,8.25,Bold</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text22</Name>
@@ -649,7 +646,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>5.6,1.6,3.2,0.8</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10</Font>
+              <Font>IRANSans,8.25,Bold</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text23</Name>
@@ -666,7 +663,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>5.6,2.4,3.2,0.8</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10</Font>
+              <Font>IRANSans,8.25,Bold</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text24</Name>
@@ -683,7 +680,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>5.6,0.8,3.2,0.8</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10</Font>
+              <Font>IRANSans,8.25,Bold</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text26</Name>
@@ -700,7 +697,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>0.2,0.8,5.4,0.8</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Arial,10</Font>
+              <Font>IRANSans,8.25,Bold</Font>
               <HorAlignment>Center</HorAlignment>
               <Margins>0,0,0,0</Margins>
               <Name>Text27</Name>
@@ -722,7 +719,7 @@
               <Brush>Transparent</Brush>
               <ClientRectangle>8.8,0,18.8,0.8</ClientRectangle>
               <Conditions isList="true" count="0" />
-              <Font>Tahoma,12</Font>
+              <Font>IRANSans,8.25</Font>
               <Margins>0,0,0,0</Margins>
               <Name>Text28</Name>
               <Page isRef="3" />
@@ -742,7 +739,6 @@
         <RectanglePrimitive1 Ref="52" type="RectanglePrimitive" isKey="true">
           <ClientRectangle>0.2,0.6,27.4,1.6</ClientRectangle>
           <Color>Black</Color>
-          <Conditions isList="true" count="0" />
           <Guid>4ce1aa576130466b97714b7593235994</Guid>
           <Name>RectanglePrimitive1</Name>
           <Page isRef="3" />
@@ -757,8 +753,13 @@
       <PageHeight>21</PageHeight>
       <PageWidth>29.7</PageWidth>
       <Report isRef="0" />
+      <Watermark Ref="53" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
     </Page1>
   </Pages>
+  <PrinterSettings Ref="54" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
   <ReferencedAssemblies isList="true" count="8">
     <value>System.Dll</value>
     <value>System.Drawing.Dll</value>
@@ -770,13 +771,13 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/3/2020 5:56:39 PM</ReportChanged>
+  <ReportChanged>4/28/2020 10:07:07 AM</ReportChanged>
   <ReportCreated>3/15/2020 9:47:26 PM</ReportCreated>
-  <ReportFile>G:\programer\Portal\Portal\src\reports\Factor.mrt</ReportFile>
-  <ReportGuid>8a11dedf9ad44ec6a2856e23770b754a</ReportGuid>
+  <ReportFile>F:\ali\سورس برنامه های ایجاد شده\New folder\Portal\Portal\Portal\src\reports\Factor.mrt</ReportFile>
+  <ReportGuid>a20b28776a434edcb2cb4dc83c776256</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
-  <ReportVersion>2020.2.1.0</ReportVersion>
+  <ReportVersion>2018.1.6.0</ReportVersion>
   <Script>using System;
 using System.Drawing;
 using System.Windows.Forms;

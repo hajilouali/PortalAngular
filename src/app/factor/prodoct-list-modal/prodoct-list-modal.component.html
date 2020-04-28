@@ -2,15 +2,15 @@
 <div class="row">
   <div class="col-sm-12">
     <div class="panel panel-default card-view">
-      
+
       <div class="panel-wrapper collapse in">
         <div class="panel-body">
           <div id="SelectProduct" *ngIf="ShowSelectProduct">
             <h3>انتخاب محصول</h3>
-            <p-table  [columns]="cols" [value]="cars" [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
+            <p-table dir="rtl" [columns]="cols" [value]="cars" [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
                 currentPageReportTemplate="محصول {first} تا {last} از {totalRecords} محصول" [(selection)]="selectedCar4" [resizableColumns]="true">
                 <ng-template pTemplate="caption">
-                    <div style="text-align: right">        
+                    <div style="text-align: right">
                         <i class="pi pi-search" style="margin:4px 4px 0 0"></i>
                         <input type="text" pInputText size="50" placeholder="جصتجو در لیست محصولات" (input)="filter($event.target.value)" style="width:auto">
                     </div>
@@ -47,7 +47,7 @@
             <div class="button-list mt-25">
               <button class="btn btn-success" (click)="ClickNextCalculat()">بعدی</button>
             </div>
-            
+
           </div>
           <div id="CalculatProduct" *ngIf="ShowCalculatProduct">
             <div class="button-list mt-25">
@@ -57,24 +57,24 @@
                     <div class="form-group">
                       <label class="control-label mb-10">طول</label>
                       <input type="number" step="0.001" min="0" class="form-control" placeholder="طول ..." (change)="ChangeValue()"  [(ngModel)]="postData.length">
-                    
+
                     </div>
                    </div>
                   <div class="col-sm-4" *ngIf="arz">
                     <div class="form-group">
                       <label class="control-label mb-10">عرض</label>
                       <input type="number" step="0.001" min="0" class="form-control" placeholder="عرض ..." (change)="ChangeValue()" [(ngModel)]="postData.width">
-                   
+
                     </div>
                    </div>
                   <div class="col-sm-4">
                     <div class="form-group">
                       <label class="control-label mb-10">تعداد</label>
                       <input type="number" step="1" min="0" class="form-control" placeholder="تعداد ..." (change)="ChangeValue()" [(ngModel)]="postData.unit" onkeydown="if(event.key==='.'){event.preventDefault();}"  oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
-                  
+
                     </div>
                       </div>
-                  
+
                 </div>
                 <div class="row">
                   <div class="col-sm-4">
@@ -87,7 +87,7 @@
                     <div class="form-group" style="color: black;">
                       <label class="control-label mb-10">متراژ کل</label>
                       <input type="text" class="form-control" disabled [(ngModel)]="postData.rowcalculate">
-                   
+
                     </div>
                     </div>
                   <div class="col-sm-4">
@@ -95,10 +95,10 @@
                       <label class="control-label mb-10">تمام شده</label>
                       <label type="text" class="form-control" disabled [(ngModel)]="postData.rowprice">{{postData.rowprice | number:'1.0-0'}} ريال</label>
                       <span>معادل : {{postData.rowprice | numberToPersian}} ريال</span>
-                   
+
                     </div>
                      </div>
-                  
+
                 </div>
                 <div class="row" >
                   <div class="form-group">
@@ -115,19 +115,19 @@
               <button class="btn btn-danger" (click)="ClickPrive()">قبلی</button>
               <button class="btn btn-success" (click)="Finish()" >اتمام</button>
             </div>
-            
+
 
           </div>
         </div>
       </div>
-    </div>	
+    </div>
   </div>
 </div>
 <!-- /Row -->
 
 
 
-<!-- 
+<!--
 <div mat-dialog-content>
   <table>
     <thead>
@@ -153,7 +153,7 @@
         <p *ngSwitchCase="2">
         عدد
         </p>
-      </td>        
+      </td>
       </tr>
     </tbody>
   </table>

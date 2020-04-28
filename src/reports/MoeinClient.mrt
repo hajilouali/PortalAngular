@@ -15,8 +15,8 @@
           <value>tbSanadID,System.Int32</value>
           <value>tbDate,System.String</value>
           <value>tbDiscription,System.String</value>
-          <value>tbBedehkar,System.Int32</value>
-          <value>tbBestankar,System.Int32</value>
+          <value>tbBedehkar,System.Double</value>
+          <value>tbBestankar,System.Double</value>
           <value>ReportDate,System.String</value>
         </Columns>
         <Dictionary isRef="1" />
@@ -32,7 +32,6 @@
   </Dictionary>
   <EngineVersion>EngineV2</EngineVersion>
   <GlobalizationStrings isList="true" count="0" />
-  <Key>58e54c275a9c4e2fbe15b61622cf05f4</Key>
   <MetaTags isList="true" count="0" />
   <Pages isList="true" count="1">
     <Page1 Ref="3" type="Page" isKey="true">
@@ -318,7 +317,7 @@
               <Name>DataDT_tnVaziat</Name>
               <Page isRef="3" />
               <Parent isRef="20" />
-              <Text>{Switch(SumRunning(DT.tbBestankar)-SumRunning(DT.tbBedehkar)&lt;0,"بده",SumRunning(DT.tbBestankar)-SumRunning(DT.tbBedehkar)&gt;0,"بست",SumRunning(DT.tbBestankar)-SumRunning(DT.tbBedehkar)==0,"--")}</Text>
+              <Text>{Switch((DT.tbBestankar-DT.tbBedehkar&gt;0),"بست",(DT.tbBestankar-DT.tbBedehkar&lt;0),"بده",DT.tbBestankar-DT.tbBedehkar==0,"--")}</Text>
               <TextBrush>Black</TextBrush>
               <TextOptions>,,,,WordWrap=True,A=0</TextOptions>
               <Type>Expression</Type>
@@ -336,7 +335,7 @@
               <Name>DataDT_tbMandeh</Name>
               <Page isRef="3" />
               <Parent isRef="20" />
-              <Text>{SumRunning(DT.tbBestankar)-SumRunning(DT.tbBedehkar)}</Text>
+              <Text>{DT.tbBestankar-DT.tbBedehkar}</Text>
               <TextBrush>Black</TextBrush>
               <TextFormat Ref="23" type="NumberFormat" isKey="true">
                 <DecimalDigits>0</DecimalDigits>
@@ -581,8 +580,13 @@
       <PageHeight>29.7</PageHeight>
       <PageWidth>21</PageWidth>
       <Report isRef="0" />
+      <Watermark Ref="40" type="Stimulsoft.Report.Components.StiWatermark" isKey="true">
+        <Font>Arial,100</Font>
+        <TextBrush>[50:0:0:0]</TextBrush>
+      </Watermark>
     </Page1>
   </Pages>
+  <PrinterSettings Ref="41" type="Stimulsoft.Report.Print.StiPrinterSettings" isKey="true" />
   <ReferencedAssemblies isList="true" count="8">
     <value>System.Dll</value>
     <value>System.Drawing.Dll</value>
@@ -594,13 +598,13 @@
     <value>Stimulsoft.Report.Dll</value>
   </ReferencedAssemblies>
   <ReportAlias>Report</ReportAlias>
-  <ReportChanged>4/4/2020 9:56:05 PM</ReportChanged>
+  <ReportChanged>4/28/2020 10:24:22 AM</ReportChanged>
   <ReportCreated>1/27/2020 4:18:43 PM</ReportCreated>
-  <ReportFile>G:\programer\Portal\Portal\src\reports\MoeinClient.mrt</ReportFile>
-  <ReportGuid>3c9f7e9b1cd440889137bc0b993a6246</ReportGuid>
+  <ReportFile>F:\ali\سورس برنامه های ایجاد شده\New folder\Portal\Portal\Portal\src\reports\MoeinClient.mrt</ReportFile>
+  <ReportGuid>b2dc513e492d47abb666cee1f8c814a0</ReportGuid>
   <ReportName>Report</ReportName>
   <ReportUnit>Centimeters</ReportUnit>
-  <ReportVersion>2020.2.1.0</ReportVersion>
+  <ReportVersion>2018.1.6.0</ReportVersion>
   <Script>using System;
 using System.Drawing;
 using System.Windows.Forms;

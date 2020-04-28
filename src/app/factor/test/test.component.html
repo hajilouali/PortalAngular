@@ -3,22 +3,22 @@
     <h5 class="txt-dark">{{Title}}</h5>
   </div>
   <!-- Breadcrumb -->
-  
+
   <!-- /Breadcrumb -->
 </div>
 <div class="row">
   <div class="col-sm-12">
      <div class="panel panel-default card-view">
-      
+
       <div class="panel-wrapper collapse in">
         <div class="panel-body">
           <div id="viewerContent" style="direction: rtl;"></div>
           <div class="row">
             <div class="col-md-4">
-              <mat-form-field>
+              <!-- <mat-form-field>
                 <mat-label>فیلتر فاکتورها</mat-label>
                 <input matInput (keyup)="applyFilter($event)" placeholder="جستجوی فاکتور ">
-              </mat-form-field>
+              </mat-form-field> -->
             </div>
             <div class="col-md-8">
               <div class="col-md-5" style="margin-top: 17px;">
@@ -47,14 +47,14 @@
 <div class="row">
   <div class="col-sm-12">
      <div class="panel panel-default card-view">
-      
+
       <div class="panel-wrapper collapse in">
         <div class="panel-body">
           <div id="viewerContent" ></div>
           <p-table dataKey="id" [columns]="cols" [value]="dataSource"  [paginator]="true" [rows]="10" [showCurrentPageReport]="true"
                 currentPageReportTemplate="فاکتور {first} تا {last} از {totalRecords} فاکتور">
                   <ng-template pTemplate="caption">
-                    <div style="text-align: right">        
+                    <div style="text-align: right">
                         <i class="pi pi-search" style="margin:4px 4px 0 0"></i>
                         <input type="text" pInputText size="50" placeholder="جصتجو در لیست فاکتورها" (input)="filtertext($event.target.value)" style="width:auto">
                     </div>
@@ -66,7 +66,7 @@
                         <th style="width: 20%">تاریخ</th>
                         <th style="width: 20%">مبلغ</th>
                         <th style="width: 20%">آخرین وضعیت</th>
-                       
+
                         <th style="width: 35%"></th>
                     </tr>
                   </ng-template>
@@ -79,7 +79,7 @@
                     </td>
                         <td>{{car.id}}</td>
                         <td>{{car.dateTime}}</td>
-                       
+
                         <td>{{car.totalPrice | number: '1.0-0'}} ريال</td>
                         <td>{{car.factorType===0?'پیش فاکتور':car.factorType===1?'فاکتور':'در انتظار تایید'}}</td>
                         <td>
@@ -88,9 +88,9 @@
                             <button style="margin-top: 0em;" class="btn  btn-sm btn-success btn-xs" routerLink='/FactorAttachment' [queryParams]="{id:car.id}" >پیوست ها</button>
                             <button style="margin-top: 0em;" class="btn  btn btn-danger btn-xs" *ngIf="car.factorType===2" routerLink='/NewFactor' [queryParams]="{id:car.id}">ویرایش</button>
                           </div>
-                          
+
                         </td>
-                        
+
                     </tr>
                   </ng-template>
                   <ng-template pTemplate="rowexpansion" let-rowData let-columns="columns">
@@ -105,12 +105,12 @@
                               <p-table [value]="rowData.manufacture[0].manufactureHistories">
                                 <ng-template pTemplate="header">
                                   <tr>
-                                    
+
                                       <th>تاریخ / زمان</th>
                                       <th>کاربر</th>
                                       <th>وضعیت</th>
                                       <th>توضیح</th>
-                                     
+
                                   </tr>
                                 </ng-template>
                                 <ng-template pTemplate="body" let-car>
@@ -123,10 +123,10 @@
                                 </ng-template>
                               </p-table>
                             </p-tabPanel>
-                            
+
                         </p-tabView>
                             <!-- <div class="ui-g ui-fluid" style="font-size:16px;padding:20px">
-                                
+
                                 <div class="ui-g-12 ui-md-9">
                                     <div class="ui-g">
                                         <div class="ui-g-12">
@@ -138,7 +138,7 @@
                                         <div class="ui-g-12">
                                             <b>Brand:</b> {{rowData.totalPrice}}
                                         </div>
-                                       
+
                                     </div>
                                 </div>
                             </div> -->
