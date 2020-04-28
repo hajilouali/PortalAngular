@@ -8,6 +8,6 @@ export interface IAppConfig {
 }
 
 export const AppConfig: IAppConfig = {
-  apiEndpoint: "https://localhost:5001/",
+  apiEndpoint: "http://192.168.1.31:8585/",
   apiSettingsPath: "ApiSettings"
 };
