@@ -1,3 +1,4 @@
+import { JalaliPipe } from './../../Services/jalali-pipe.service';
 import { Component, OnInit, Inject } from '@angular/core';
 import { DialogData } from '../add-factor/add-factor.component';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -14,7 +15,7 @@ export class ProdoctListModalComponent implements OnInit {
   ordingdata:Car[];
     cols: any[];
     selectedCar4:Car;
-    first = 0;  
+    first = 0;
     rows = 10;
     ShowSelectProduct = true;
     ShowCalculatProduct=false;
@@ -39,16 +40,16 @@ export class ProdoctListModalComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: DialogData) { }
 
   ngOnInit(): void {
-    
+
     this.cars=this.data.name;
     this.ordingdata=this.data.name;
     this.cols = [
-          
+
       { field: 'productName', header: 'نام محصول' },
       { field: 'productCode', header: 'کد محصول'},
       { field: 'unitPricestring', header: 'قیمت واحد' },
       { field: 'unitTypestring', header: 'واحد' }
-      ];     
+      ];
       // const item = document.getElementById('SelectProduct');
       // item.hidden=true;
       // const nextItem=document.getElementById('CalculatProduct');
@@ -89,7 +90,7 @@ export class ProdoctListModalComponent implements OnInit {
         break;
       }
     }
-    
+
   }
   roundNumberV2(num, scale) {
     if (Math.round(num) != num) {
@@ -127,7 +128,7 @@ export class ProdoctListModalComponent implements OnInit {
         this.postData.rowcalculate=this.roundNumberV2((this.postData.unit),3);
         this.postData.rowprice=this.postData.rowcalculate*this.postData.unitPrice;
         break;
-      
+
     }
   }
   ClickPrive(){
@@ -140,9 +141,9 @@ export class ProdoctListModalComponent implements OnInit {
     this.postData.unit=0;
   }
   Finish(){
-    
+
     this.data.animal=this.postData;
-    
+
     this.dialogRef.close(this.postData);
   }
   onNoClick(): void {
@@ -155,12 +156,12 @@ export class ProdoctListModalComponent implements OnInit {
 
   prev() {
     this.first = this.first - this.rows;
-    
+
   }
 
   reset() {
     this.first = 0;
-  } 
+  }
 
   isLastPage(): boolean {
     return this.first === (this.cars.length - this.rows);
@@ -171,7 +172,7 @@ export class ProdoctListModalComponent implements OnInit {
   }
   filter(text){
   this.cars=this.filterItems(this.ordingdata,text);
-  
+
   }
   filterItems(itemList: any, searchKeyword: string) {
   if (!itemList)
@@ -199,7 +200,7 @@ export class ProdoctListModalComponent implements OnInit {
     return filteredList;
   }
 
-  
+
 }
 export interface Car{
   unitPrice:number,
