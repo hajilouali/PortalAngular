@@ -1,5 +1,5 @@
 <!-- Row -->
-<div class="row">
+<div mat-dialog-content class="row">
   <div class="col-sm-12">
     <div class="panel panel-default card-view">
 
@@ -12,7 +12,7 @@
                 <ng-template pTemplate="caption">
                     <div style="text-align: right">
                         <i class="pi pi-search" style="margin:4px 4px 0 0"></i>
-                        <input type="text" pInputText size="50" placeholder="جصتجو در لیست محصولات" (input)="filter($event.target.value)" style="width:auto">
+                        <input type="text" pInputText size="50" placeholder="جصتجو در لیست محصولات" (input)="filter($event.target.value)" style="width:15em">
                     </div>
                 </ng-template>
                 <ng-template pTemplate="colgroup" let-columns>
@@ -36,6 +36,7 @@
                         <td *ngFor="let col of columns">
                             {{rowData[col.field]}}
                         </td>
+
                     </tr>
                 </ng-template>
                 <ng-template pTemplate="summary">
@@ -49,7 +50,7 @@
             </div>
 
           </div>
-          <div id="CalculatProduct" *ngIf="ShowCalculatProduct">
+          <div id="CalculatProduct" dir="rtl" *ngIf="ShowCalculatProduct">
             <div class="button-list mt-25">
               <div class="col-sm-12">
                 <div class="row">
