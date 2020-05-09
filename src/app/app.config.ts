@@ -8,6 +8,6 @@ export interface IAppConfig {
 }
 
 export const AppConfig: IAppConfig = {
-  apiEndpoint: "http://91.92.125.19:8585/",
-  apiSettingsPath: "ApiSettings"
+  apiEndpoint: 'http://91.92.125.19:8585/',
+  apiSettingsPath: 'ApiSettings'
 };

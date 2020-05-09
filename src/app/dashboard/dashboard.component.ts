@@ -25,11 +25,10 @@ export class DashboardComponent implements OnInit , OnDestroy {
     this.subManager.add(
       this.auth.userinformation().subscribe( p => {
         this.userinfo = p.data;
-        console.log(p.data);
       },
       error => this.logout())
 
-    )
+    );
 
   }
   logout() {

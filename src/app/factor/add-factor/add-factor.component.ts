@@ -35,20 +35,20 @@ export class AddFactorComponent implements OnInit {
     rows:new Array(),
 
   }
-    
+
   constructor(private route:ActivatedRoute,private api :ApiServiceService,public dialog: MatDialog,private rout :Router) { }
 
   ngOnInit(): void {
     this.route.queryParamMap.subscribe(res=>{this.factorid=res.get('id');});
-    
+
     this.api.GetProductList().subscribe(
       res=>{
         this.productlistinserver=res.data;
       },
       error=>console.log('مشکلی در فرایند دریافت لیست محصولات پیش آمده')
     );
-    this.api.isAuthenticated().subscribe(res=>{   
-     
+    this.api.isAuthenticated().subscribe(res=>{
+
       this.userDiscunt=res.data.discount;
     });
     if(this.factorid>0){
@@ -72,23 +72,24 @@ export class AddFactorComponent implements OnInit {
             }
             )
           });
-          this.api.isAuthenticated().subscribe(res=>{   
-     
+          this.api.isAuthenticated().subscribe(res=>{
+
             this.userDiscunt=res.data.discount;
             this.CalculatFactor();
           });
-          
-          
+
+
         }
       );
-      
+
     }
   }
   viewCar(car: RowsProduct) {
     console.log(`detail:${ car.producName  }`);
-    
+
 }
 SendFactor(){
+
   Swal.fire({
     icon: 'question',
     title: 'تاییدیه فاکتور',
@@ -102,31 +103,45 @@ SendFactor(){
       this.rowFactor.forEach(element => {
         this.dto.rows.push(
           {
-            length:element.length,
-            productAndService_ID:element.productAndService_ID,
-            rowDiscription:element.rowDiscription,
-            unit:element.unit,
-            unitPrice:element.unitPrice,
-            width:element.width
+            length: element.length,
+            productAndService_ID: element.productAndService_ID,
+            rowDiscription: element.rowDiscription,
+            unit: element.unit,
+            unitPrice: element.unitPrice,
+            width: element.width
           }
         )
       });
-      this.api.AddNewFactor(this.dto).subscribe(
-        res=>{
+      const numbers = this.rowFactor.map(i => i.rowprice);
+
+      // gets the sum of the array of numbers: 134
+      const sum = numbers.reduce((a, b) => a + b, 0);
+      if (sum > 0) {
+        this.api.AddNewFactor(this.dto).subscribe(
+          res=>{
+            Swal.fire({
+              icon: 'success',
+              title: '  تایید',
+              text: 'فاکتور شما با موفقیت ثبت و ارسال گردیده شد .'
+            });
+            this.rout.navigate(['/Invoicelist']);
+          },
+          error=>
           Swal.fire({
-            icon: 'success',
-            title: '  تایید',
-            text: 'فاکتور شما با موفقیت ثبت و ارسال گردیده شد .'
-          });
-          this.rout.navigate(['/Invoicelist']);
-        },
-        error=>
+            icon: 'error',
+            title: ' عدم تایید',
+            text: 'درفرایند ثبت پیش فاکتور مشکلی پیش آمده . لطفاً مجددا تلاش نمایید.'
+          })
+        );
+      } else if (sum <= 0) {
         Swal.fire({
           icon: 'error',
           title: ' عدم تایید',
-          text: 'درفرایند ثبت پیش فاکتور مشکلی پیش آمده . لطفاً مجددا تلاش نمایید.'
+          text: 'لطفاً اطلاعات ردیف های خود را مجدداً بررسی نمایید.'
         })
-      );
+      }
+
+
     } else if (
       /* Read more about handling dismissals below */
       result.dismiss === Swal.DismissReason.cancel
@@ -162,22 +177,36 @@ UpdateFactor(){
           }
         )
       });
-      this.api.UpdateFactor(this.factorid,this.dto).subscribe(
-        res=>{
+      const numbers = this.rowFactor.map(i => i.rowprice);
+
+      // gets the sum of the array of numbers: 134
+      const sum = numbers.reduce((a, b) => a + b, 0);
+      if (sum > 0) {
+        this.api.UpdateFactor(this.factorid, this.dto).subscribe(
+          res => {
+            Swal.fire({
+              icon: 'success',
+              title: '  تایید',
+              text: 'فاکتور شما با موفقیت اصلاح و ارسال گردیده شد .'
+            });
+            this.rout.navigate(['/Invoicelist']);
+          },
+          error=>
           Swal.fire({
-            icon: 'success',
-            title: '  تایید',
-            text: 'فاکتور شما با موفقیت اصلاح و ارسال گردیده شد .'
-          });
-          this.rout.navigate(['/Invoicelist']);
-        },
-        error=>
+            icon: 'error',
+            title: ' عدم تایید',
+            text: 'درفرایند ثبت پیش فاکتور مشکلی پیش آمده . لطفاً مجددا تلاش نمایید.'
+          })
+        );
+      } else if (sum <= 0) {
         Swal.fire({
           icon: 'error',
           title: ' عدم تایید',
-          text: 'درفرایند ثبت پیش فاکتور مشکلی پیش آمده . لطفاً مجددا تلاش نمایید.'
+          text: 'لطفاً اطلاعات ردیف های فاکتور خود را مجدداً بررسی نمایید'
         })
-      );
+      }
+
+
     } else if (
       /* Read more about handling dismissals below */
       result.dismiss === Swal.DismissReason.cancel
@@ -199,6 +228,13 @@ CalculatFactor(){
   });
   Discunt=Price * (this.userDiscunt/100);
   TotalPrice = Price - Discunt;
+  if (TotalPrice <= 0) {
+    Swal.fire({
+      icon: 'error',
+      title: ' عدم تایید',
+      text: 'لطفا ردیف های فاکتور خود را مجداً بررسی نمایید.'
+    })
+  }
   this.FactorPrice=Price;
   this.FactorDiscunt=Discunt;
   this.FactorTotalPrice=TotalPrice;
@@ -222,16 +258,16 @@ deleteCar(car: RowsProduct) {
           }
       }
       this.rowFactor.splice(index, 1);
-  
-      this.CalculatFactor(); 
+
+      this.CalculatFactor();
     } else if (
       /* Read more about handling dismissals below */
       result.dismiss === Swal.DismissReason.cancel
     ) {
-     
+
     }
   });
-    
+
 }
   openDialog(): void {
     const dialogRef = this.dialog.open(ProdoctListModalComponent, {
@@ -240,7 +276,7 @@ deleteCar(car: RowsProduct) {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      
+
       if(result!=null){
         this.rowFactor.push(
           {
@@ -255,12 +291,12 @@ deleteCar(car: RowsProduct) {
             rowprice:result.rowprice
           }
         );
-        
-       this.CalculatFactor(); 
+
+       this.CalculatFactor();
       }else if(result==null){
         console.log('بدون انتخاب محصول');
       }
-      
+
     });
   }
   doTextareaValueChange(ev){

@@ -1,3 +1,4 @@
+import { error } from 'protractor';
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiServiceService } from 'src/app/Services/api-service.service';
@@ -15,19 +16,20 @@ export class TopmenuComponent implements OnInit {
 
   constructor(private auth: ApiServiceService, private router: Router) {
 
-    
-    
+
+
    }
 
   ngOnInit(): void {
     this.auth.userinformation().subscribe( res => {
        this.userinfo = res;
-       
-       this.userinfo=this.userinfo.data;
-       this.FullName=this.userinfo.userFullName;
-        });
-    
-    
+
+       this.userinfo = this.userinfo.data;
+       this.FullName = this.userinfo.userFullName;
+        },
+        error => this.logout());
+
+
   }
   logout() {
     this.auth.logout();

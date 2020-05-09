@@ -28,7 +28,7 @@ export class TestComponent implements OnInit {
   Title='لیست فاکتور ها';
   dataSource ;
   ordingdata;
-  first = 0;  
+  first = 0;
   rows = 10;
   GetFactorDto = {
     ISAllType : true,
@@ -75,12 +75,12 @@ export class TestComponent implements OnInit {
 
   prev() {
     this.first = this.first - this.rows;
-    
+
   }
 
   reset() {
     this.first = 0;
-  } 
+  }
 
   isLastPage(): boolean {
     return this.first === (this.dataSource.length - this.rows);
@@ -91,7 +91,7 @@ export class TestComponent implements OnInit {
   }
   filtertext(text){
   this.dataSource=this.filterItems(this.ordingdata,text);
-  
+
   }
   filterItems(itemList: any, searchKeyword: string) {
   if (!itemList)

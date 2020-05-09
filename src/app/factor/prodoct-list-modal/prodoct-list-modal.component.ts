@@ -141,10 +141,17 @@ export class ProdoctListModalComponent implements OnInit {
     this.postData.unit=0;
   }
   Finish(){
+    if (this.postData.rowprice > 0) {
+      this.data.animal=this.postData;
 
-    this.data.animal=this.postData;
-
-    this.dialogRef.close(this.postData);
+      this.dialogRef.close(this.postData);
+    } else if (this.postData.rowprice <= 0) {
+      Swal.fire({
+        icon: 'error',
+        title: ' عدم تایید',
+        text: 'لطفاً اطلاعات ردیف های خود را مجدداً بررسی نمایید.'
+      });
+    }
   }
   onNoClick(): void {
     this.dialogRef.close(null);
