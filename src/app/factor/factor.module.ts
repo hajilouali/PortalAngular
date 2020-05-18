@@ -10,6 +10,7 @@ import { InvoiceListComponent } from './invoice-list/invoice-list.component';
 import { TestComponent } from './test/test.component';
 
 import { CoreModule } from '../core/core.module';
+import { FactorInfoComponent } from './factor-info/factor-info.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { CoreModule } from '../core/core.module';
     AddAttachmentComponent,
     AddFactorComponent,
     ProdoctListModalComponent,
+    FactorInfoComponent,
     
   ],
   imports: [

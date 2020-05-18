@@ -54,6 +54,9 @@ export class ApiServiceService {
   public GetFactorDto(id) {
     return this.http.get<FactorDto>(`${this.appConfig.apiEndpoint}api/v1/Partner/GetFactor/${id}`);
   }
+  public GetFactorDtoByCode(id) {
+    return this.http.get<FactorDto>(`${this.appConfig.apiEndpoint}api/v1/Partner/GetFactorByCode/${id}`);
+  }
   public GetFactorAttachment(id):Observable<Factorattachment>{
     return this.http.get<Factorattachment>(`${this.appConfig.apiEndpoint}api/v1/Partner/GetFactorAttachment/${id}`);
   }

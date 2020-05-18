@@ -1,3 +1,4 @@
+import { PayGlobalyComponent } from './pay-globaly/pay-globaly.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MainComponent } from '../sheard/main/main.component';
@@ -9,6 +10,7 @@ const routes: Routes = [
   {path: 'pay', component: MainComponent, canActivate: [GuardService], children: [{
     path: '', component: PayComponent
   }]},
+  {path: 'payG', component: PayGlobalyComponent},
 ];
 
 @NgModule({

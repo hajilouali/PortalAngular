@@ -1,3 +1,4 @@
+import { FactorInfoComponent } from './factor-info/factor-info.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { TestComponent } from './test/test.component';
@@ -11,16 +12,16 @@ const routes: Routes = [
   {path: 'Invoicelist', component: MainComponent, canActivate: [GuardService], children: [{
     path: '', component: TestComponent
   }]},
-  
-  {path:'FactorAttachment',component:MainComponent,canActivate:[GuardService],children:[{
-    path:'',component:FactorAttachmentComponent
+  {path: 'FactorAttachment', component: MainComponent, canActivate: [GuardService], children: [{
+    path: '', component: FactorAttachmentComponent
   }]},
-  {path:'AddAttachment',component:MainComponent,canActivate:[GuardService],children:[{
-    path:'',component:AddAttachmentComponent
+  {path: 'AddAttachment', component: MainComponent, canActivate: [GuardService], children: [{
+    path: '', component: AddAttachmentComponent
   }]},
-  {path:'NewFactor',component:MainComponent,canActivate:[GuardService],children:[{
-    path:'',component:AddFactorComponent
+  {path: 'NewFactor', component: MainComponent, canActivate: [GuardService], children: [{
+    path: '', component: AddFactorComponent
   }]},
+  {path: 'FactorInfo', component: FactorInfoComponent},
 ];
 
 @NgModule({

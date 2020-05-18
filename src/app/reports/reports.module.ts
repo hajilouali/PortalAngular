@@ -4,12 +4,14 @@ import { ReportsRoutingModule } from './reports-routing.module';
 import { MoeinClientComponent } from './moein-client/moein-client.component';
 import { FactorreportComponent } from './factorreport/factorreport.component';
 import { CoreModule } from '../core/core.module';
+import { FactorReportByCodeComponent } from './factor-report-by-code/factor-report-by-code.component';
 
 
 @NgModule({
   declarations: [
     MoeinClientComponent,
-    FactorreportComponent
+    FactorreportComponent,
+    FactorReportByCodeComponent
   ],
   imports: [
     CommonModule,
