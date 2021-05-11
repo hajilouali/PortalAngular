@@ -28,7 +28,7 @@
     "@ngx-gallery/lightbox": "^5.0.0-beta.0",
     "angular-pipes": "^10.0.0",
     "jquery": "^3.5.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "moment-jalaali": "^0.9.1",
     "ng2-jalali-date-picker": "^2.2.7",
     "ngx-infinite-scroll": "^8.0.2",
